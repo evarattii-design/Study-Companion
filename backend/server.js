@@ -17,12 +17,11 @@ const courseRoutes = require('./routes/course');
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "http://localhost:5173", // frontend URL
-    credentials: true,               // allow cookies
-  })
-);
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true,
+}));
+
 app.use(fileUpload({ useTempFiles: true, tempFileDir: '/tmp' }));
 
 // Mount routes
